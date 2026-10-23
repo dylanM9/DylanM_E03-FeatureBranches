@@ -1,11 +1,16 @@
 const portrait = document.querySelector<HTMLDivElement>("#portrait")!;
 const spin = document.querySelector<HTMLButtonElement>("#spin")!;
 
+// @deno-types="./asset-url.d.ts"
+import eyeUrl_left from "./assets/Eye_left.png?no-inline";
+import eyeUrl_right from "./assets/Eye_right.png?no-inline";
+import mustaucheUrl from "./assets/mustauche.png?no-inline";
+
 // The prototype grew inline. Keep it this way until the refactoring checkpoint.
 const face = document.createElementNS("http://www.w3.org/2000/svg", "svg");
 face.setAttribute("viewBox", "0 0 200 200");
 face.setAttribute("role", "img");
-face.setAttribute("aria-label", "A neutral face");
+face.setAttribute("aria-label", "A horrific face");
 
 const head = document.createElementNS("http://www.w3.org/2000/svg", "ellipse");
 head.setAttribute("cx", "100");
@@ -17,27 +22,27 @@ head.setAttribute("stroke", "#302c29");
 head.setAttribute("stroke-width", "4");
 face.append(head);
 
-const leftEye = document.createElementNS(
+const eyeImg_left = document.createElementNS(
   "http://www.w3.org/2000/svg",
-  "ellipse",
+  "image",
 );
-leftEye.setAttribute("cx", "72");
-leftEye.setAttribute("cy", "82");
-leftEye.setAttribute("rx", "6");
-leftEye.setAttribute("ry", "9");
-leftEye.setAttribute("fill", "#302c29");
-face.append(leftEye);
+eyeImg_left.setAttribute("href", eyeUrl_left);
+eyeImg_left.setAttribute("x", "50");
+eyeImg_left.setAttribute("y", "60");
+eyeImg_left.setAttribute("width", "40");
+eyeImg_left.setAttribute("height", "40");
+face.append(eyeImg_left);
 
-const rightEye = document.createElementNS(
+const eyeImg_right = document.createElementNS(
   "http://www.w3.org/2000/svg",
-  "ellipse",
+  "image",
 );
-rightEye.setAttribute("cx", "128");
-rightEye.setAttribute("cy", "82");
-rightEye.setAttribute("rx", "6");
-rightEye.setAttribute("ry", "9");
-rightEye.setAttribute("fill", "#302c29");
-face.append(rightEye);
+eyeImg_right.setAttribute("href", eyeUrl_right);
+eyeImg_right.setAttribute("x", "110");
+eyeImg_right.setAttribute("y", "60");
+eyeImg_right.setAttribute("width", "40");
+eyeImg_right.setAttribute("height", "40");
+face.append(eyeImg_right);
 
 const nose = document.createElementNS("http://www.w3.org/2000/svg", "line");
 nose.setAttribute("x1", "100");
@@ -58,6 +63,17 @@ mouth.setAttribute("stroke", "#302c29");
 mouth.setAttribute("stroke-width", "4");
 mouth.setAttribute("stroke-linecap", "round");
 face.append(mouth);
+
+const mustauche = document.createElementNS(
+  "http://www.w3.org/2000/svg",
+  "image",
+);
+mustauche.setAttribute("href", mustaucheUrl);
+mustauche.setAttribute("x", "50");
+mustauche.setAttribute("y", "80");
+mustauche.setAttribute("width", "100");
+mustauche.setAttribute("height", "100");
+face.append(mustauche);
 
 portrait.append(face);
 
