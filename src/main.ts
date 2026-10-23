@@ -109,6 +109,7 @@ function buildFace() {
   );
   eyebrow_left.setAttribute("d", "M 90 80 C 30 80, 50 50, 50 50");
   eyebrow_left.setAttribute("stroke", "#302c29");
+  eyebrow_left.setAttribute("fill", "#302c29");
   face.append(eyebrow_left);
 
   const eyebrow_right = document.createElementNS(
@@ -117,6 +118,7 @@ function buildFace() {
   );
   eyebrow_right.setAttribute("d", "M 110 80 C 170 80, 150 50, 150 50");
   eyebrow_right.setAttribute("stroke", "#302c29");
+  eyebrow_right.setAttribute("fill", "#302c29");
   face.append(eyebrow_right);
 
   return face;
