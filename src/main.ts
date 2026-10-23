@@ -123,6 +123,7 @@ function buildFace() {
 }
 
 const face = buildFace();
+
 portrait.append(face);
 
 spin.addEventListener("click", () => {
